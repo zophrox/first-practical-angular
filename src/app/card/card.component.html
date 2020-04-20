@@ -1,2 +1,38 @@
-<h2>Card component</h2>
-<p>I want to know angular!I will know angular!It's true!</p>
+<div class="card">
+    <h2 [ngStyle]="{
+        color: title.length < 10 ? 'orange':'green',
+        textDecoration: title.length < 5 ? 'underline' : 'green wavy underline'
+    }">{{title}}</h2>
+
+
+    <!-- <p class="text" [ngClass]="{
+        blue: textColor ==='blue',
+        red: textColor ==='red',
+        green: textColor ==='green'
+    }">I want to know angular!{{text}}</p>
+     -->
+     <p class="text"
+        [class.blue]="textColor ==='blue'"
+        [class.green]="textColor ==='green'"
+        [class.red]="textColor ==='red'"
+     
+     >{{text}}</p>
+    
+    <div class="buttons">
+        <button (click)="textColor = 'red'">set red</button>
+        <button (click)="textColor = 'blue'">set blue</button>
+        <button (click)="textColor = 'green'">set green</button>
+        
+    </div>
+
+   <div class="buttons">
+       <button (click)='changeTitle()'>Change title</button>
+       <button (click)='title="hdjkflaskdjfh"'>Chanse tile second</button>
+   </div>
+
+   <div>
+       <input type="text" [(ngModel)]='title'>
+   </div>
+
+
+</div>

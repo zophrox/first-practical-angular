@@ -1,6 +1,18 @@
 <div class="container">
   <h1>Hello Oleg!!!</h1>
 
-  <app-card></app-card>
-  <app-card2></app-card2>
+  <hr>
+
+  <button (click)="togleCards()">Toggle</button>
+
+  <hr>
+
+  <!-- <app-form></app-form> -->
+    <div *ngIf="togle">
+      <app-card></app-card>
+      <app-card></app-card>
+      <app-card></app-card>
+      <app-card></app-card>
+      <app-card></app-card>
+    </div> 
 </div>
