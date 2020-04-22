@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Hello Oleg!!!</h1>
+  <h1>Hello people!!!</h1>
 
   <hr>
 
@@ -8,12 +8,13 @@
   <hr>
 
   <!-- <app-form></app-form> -->
-    <div *ngIf="togle: else differentBlock">
-      <app-card></app-card>
-      <app-card></app-card>
-      <app-card></app-card>
-      <app-card></app-card>
-      <app-card></app-card>
+    <div *ngIf="togle; else differentBlock">
+      <app-card
+        *ngFor="let iterCard of cards; let idx = index"
+        [card]="iterCard"
+        [index] ="idx + 1"
+      ></app-card>
+
     </div> 
 
     <ng-template #differentBlock>

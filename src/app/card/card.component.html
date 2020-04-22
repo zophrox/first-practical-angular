@@ -1,22 +1,22 @@
 <div class="card">
     <h2 [ngStyle]="{
-        color: title.length < 10 ? 'orange':'green',
-        textDecoration: title.length < 5 ? 'underline' : 'green wavy underline'
-    }">{{title}}</h2>
+        color: card.title.length < 10 ? 'orange':'green',
+        textDecoration: card.title.length < 5 ? 'underline' : 'green wavy underline'
+    }">{{index}} {{card.title}}</h2>
 
 
     <!-- <p class="text" [ngClass]="{
         blue: textColor ==='blue',
         red: textColor ==='red',
         green: textColor ==='green'
-    }">I want to know angular!{{text}}</p>
+    }">I want to know angular!{{card.text}}</p>
      -->
      <p class="text"
         [class.blue]="textColor ==='blue'"
         [class.green]="textColor ==='green'"
         [class.red]="textColor ==='red'"
      
-     >{{text}}</p>
+     >{{card.text}}</p>
     
     <div class="buttons">
         <button (click)="textColor = 'red'">set red</button>
@@ -27,11 +27,17 @@
 
    <div class="buttons">
        <button (click)='changeTitle()'>Change title</button>
-       <button (click)='title="hdjkflaskdjfh"'>Chanse tile second</button>
+       <button (click)='card.title="hdjkflaskdjfh"'>Chanse tile second</button>
    </div>
 
    <div>
-       <input type="text" [(ngModel)]='title'>
+       <input type="text" [(ngModel)]='card.title'>
+   </div>
+    <br>
+    
+    <br>
+   <div>
+       <strong> {{cardDate | date:'dd MMMM yyyy HH:MM:ss':null:'uk'}}</strong>
    </div>
 
 
