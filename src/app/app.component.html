@@ -8,11 +8,15 @@
   <hr>
 
   <!-- <app-form></app-form> -->
-    <div *ngIf="togle">
+    <div *ngIf="togle: else differentBlock">
       <app-card></app-card>
       <app-card></app-card>
       <app-card></app-card>
       <app-card></app-card>
       <app-card></app-card>
     </div> 
+
+    <ng-template #differentBlock>
+      <P>One should always remember</P>
+    </ng-template>
 </div>
